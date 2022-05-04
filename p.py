@@ -29,10 +29,13 @@ with open('products.txt', 'w') as f: #開啟檔案，寫入模式，如果沒有
 	for p in products: #把這個檔案一個一個寫入
 		f.write(p[0] + ',' + p[1] + '\n')#在open的這個檔案write
 
-with open('products.csv', 'w') as f: #csv是比較常見的儲存格式
+with open('products.csv', 'w', encoding='utf-8') as f: #在寫入檔案時加入encoding='utf-8'來解決中文字會變成亂碼的問題
+	f.write('商品,價格\n')#加上這行來讓表格有一個欄位名稱
 	for p in products: #把這個檔案一個一個寫入
-		f.write(p[0] + ',' + p[1] + '\n')#在open的這個檔案write
-
+		f.write(p[0] + ',' + p[1] + '\n')#csv的區隔是,
+		
+#在python中，如果是with下的話，他會自動把檔案關閉
+#其他的程式語言還會需要把檔案close掉
 
 
 
