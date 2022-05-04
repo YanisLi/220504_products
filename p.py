@@ -7,8 +7,20 @@ while True:
     if name == 'q':
     	break
     price = input('請輸入商品價格：')
-    p = []#建立一個小清單
-    p.append(name)#在清單內放入名稱
-    p.append(price)#在清單內放入價格
-    products.append(p)#把小清單放入大清單
+#    p = []#建立一個小清單
+#    p.append(name)#在清單內放入名稱
+#    p.append(price)#在清單內放入價格
+#    products.append(p)#把小清單放入大清單
+
+#    p = [name, price]#也可以把上面三行縮到清單裡面
+#    products.append(p)#把小清單放入大清單
+
+    products.append([name, price])
+
 print(products)
+
+for p in products:#把products加入p
+    print(p)#把清單內容逐條print出來
+    print(p[0], '的價格是', p[1])
+
+# 可以透過products[0][0]來找到特定的資料#第一個[0]是大清單的第0格，第二個[0]是小清單中的第0格
