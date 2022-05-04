@@ -24,3 +24,19 @@ for p in products:#把products加入p
     print(p[0], '的價格是', p[1])
 
 # 可以透過products[0][0]來找到特定的資料#第一個[0]是大清單的第0格，第二個[0]是小清單中的第0格
+
+with open('products.txt', 'w') as f: #開啟檔案，寫入模式，如果沒有這個檔案的話，會生成一個 as、這個檔案會被稱作f
+	for p in products: #把這個檔案一個一個寫入
+		f.write(p[0] + ',' + p[1] + '\n')#在open的這個檔案write
+
+with open('products.csv', 'w') as f: #csv是比較常見的儲存格式
+	for p in products: #把這個檔案一個一個寫入
+		f.write(p[0] + ',' + p[1] + '\n')#在open的這個檔案write
+
+
+
+
+
+
+
+
